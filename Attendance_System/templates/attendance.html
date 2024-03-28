@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Attendance</title>
+</head>
+<body>
+    <h1>Attendance Records</h1>
+    <table border="1">
+        <tr>
+            <th>Session ID</th>
+            <th>Students Attended</th>
+        </tr>
+        {% for session_id, students in attendance_records.items() %}
+        <tr>
+            <td>{{ session_id }}</td>
+            <td>
+                <ul>
+                    {% for student in students %}
+                    <li>{{ student }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
